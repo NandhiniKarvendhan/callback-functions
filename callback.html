@@ -14,27 +14,56 @@
       // console.log(array);
       salaries += Number(item.salary);
     }
-
     employees.forEach(add);
     console.log(salaries);
 
     // Filtering numbers greater than 5 in given array using filter() method
-    const list = [5, 3, 8, 6, 9, 3, 7, 3, 2, 1, 4, 6];
+    const num = [5, 3, 8, 6, 9, 3, 7, 3, 2, 1, 4, 6];
 
-    function callback(list) {
+    function callback(num) {
       const newList = [];
-      for (let i = 0; i < list.length; i++) {
-        if (list[i] > 5) {
-          newList.push(list[i]);
+      for (let i = 0; i < num.length; i++) {
+        if (num[i] > 5) {
+          newList.push(num[i]);
         }
       }
       return newList;
     }
 
-    function filter(list, callback) {
-      return callback(list);
+    function filter(num, callback) {
+      return callback(num);
     }
-    const filtered = filter(list, callback);
+    const filtered = filter(num, callback);
     console.log(filtered);
+
+    // count the occurrence of each word using reduce method()
+
+    const list = ["hi", "boo", "boo", "hello", "ada", "ada", "ada"];
+    const result = list.reduce(function (previous, current) {
+      if (current in previous) {
+        previous[current] += 1;
+      } else {
+        previous[current] = 1;
+      }
+      return previous;
+    }, {});
+
+    // write to console
+    console.log("result: " + JSON.stringify(result));
+
+    // sort the array using sort() method
+    var numbers = [4, 2, 7, 5, 1, 6, 3, 9, 8];
+
+    function compare(a, b) {
+      if (a < b) return -1;
+      if (a > b) return 1;
+      if (a === b) return 0;
+    }
+
+    // sort array
+    numbers.sort(compare);
+
+    // write sorted array to console
+    console.log(JSON.stringify(numbers));
   </script>
 </html>
